@@ -1,0 +1,28 @@
+{
+  "name": "orangehrmlive-automated-tests",
+  "version": "1.0.0",
+  "description": "automated tests with cypress on a online instance of orange HRM",
+  "main": "index.js",
+  "scripts": {
+    "cyopen": "cypress open",
+    "cyrun": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deadandres95/orangehrmlive-automated-tests.git"
+  },
+  "keywords": [
+    "automated",
+    "test",
+    "orangeHRM"
+  ],
+  "author": "Andrés Jiménez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deadandres95/orangehrmlive-automated-tests/issues"
+  },
+  "homepage": "https://github.com/deadandres95/orangehrmlive-automated-tests#readme",
+  "dependencies": {
+    "cypress": "^10.4.0"
+  }
+}
