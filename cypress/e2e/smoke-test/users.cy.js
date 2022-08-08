@@ -9,24 +9,28 @@ describe('Smoke test of the users page', () => {
         cy.get('#txtPassword').type('admin123');
         // click on the button to login
         cy.get('#btnLogin').click();
-    })
-
-    it('User - add', () => {
         // click on the admin button to go to the user module
         cy.get('#menu_admin_viewAdminModule').click();
+    })
+
+    //Smoke test for the feature add user
+    it('User - add', () => {
+        //variables to use
+        let newUser = 'PMAnder';
+        let password = 'W1?W9(gH+:&_.z+8';
         // Click on the add button
         cy.get('#btnAdd').click();
         // Fill the field employee name
         cy.get('#systemUser_employeeName_empName').type('Peter Mac Anderson');
         // Fill the username field
-        cy.get('#systemUser_userName').type('PMAnder');
+        cy.get('#systemUser_userName').type(newUser);
         // Fill the password field
-        cy.get('#systemUser_password').type('W1?W9(gH+:&_.z+8');
+        cy.get('#systemUser_password').type(password);
         // Confirm the typed password
-        cy.get('#systemUser_confirmPassword').type('W1?W9(gH+:&_.z+8');
+        cy.get('#systemUser_confirmPassword').type(password);
         // add the user
         cy.get('#btnSave').click();
         // Check if the user is registered
-        cy.get('#search-results > .inner').contains('PMAnder');
+        cy.get('#search-results > .inner').contains(newUser);
     })
 })
