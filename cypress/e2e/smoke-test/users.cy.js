@@ -33,4 +33,21 @@ describe('Smoke test of the users page', () => {
         // Check if the user is registered
         cy.get('#search-results > .inner').contains(newUser);
     })
+
+    //Smoke test for the feature edit user
+    it.only('User - edit', () => {
+        //variables to use
+        let user = 'Peter.Anderson';
+        let newUser = 'Peter.Mac.Anderson';
+        // Click en the anchor that match with the user name
+        cy.get('#search-results > .inner').contains(user).click();
+        // Edit the record
+        cy.get('#btnSave').click();
+        // change the username
+        cy.get('#systemUser_userName').clear().type(newUser);
+        // Save the changes
+        cy.get('#btnSave').click();
+        // Check if the username has changed
+        cy.get('#search-results > .inner').contains(newUser);
+    })
 })
